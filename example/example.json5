@@ -1,0 +1,22 @@
+{
+// This is JSON5 example data
+// JSON5 can write comment in your json
+/*Sample Comment 1
+*//*Sample Comment 2*/
+  list: [
+    {
+      name: "Hussein",
+      family: "Daneshvar",
+      skills: ["C++", "Go", "JavaScript",],
+      projects: [{name: "Spring", date: "2015",}, {name: "Hafez", date: "2018",}],
+      summery: "I'm a \"C++\" Developer\nand a Go Developer",
+    },
+    {
+      name: "Mehrdad",
+      family: "Nourozi",
+      skills: ["C#", "JavaScript",],
+      projects: [{name: "Bandar", date: "2005"}, {name: "NewSite", date: "2018",}],
+      summery: "I'm a \"C#\" Developer",
+    },
+  ],
+}
