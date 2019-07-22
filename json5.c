@@ -10,8 +10,10 @@
     Credits:
     Dominik Madarasz (GitHub: zaklaus)
     r-lyeh (fork)
+    daneshvar.hu (fork)
 
     Version History:
+    2.2.0 - fix continuously comment
     2.1.0 - negative numbers fix, comment parsing fix, invalid memaccess fix (@r-lyeh)
     2.0.9 - zpl 4.0.0 support
     2.0.8 - Small cleanup in README and test file
@@ -204,7 +206,6 @@ int json5_parse(json5_object* root, char* source, bool strip_comments) {
     char lit_c = '\0';
     char* p = dest;
     char* b = dest;
-    int l = 0;
 
     while (*p) {
       if (!is_lit) {
@@ -228,29 +229,22 @@ int json5_parse(json5_object* root, char* source, bool strip_comments) {
       if (!is_lit) {
         if (p[0] == '/' && p[1] == '*') {
           b = p;
-          l = 2;
           p += 2;
 
           while (p[0] != '*' && p[1] != '/') {
             ++p;
-            ++l;
           }
-          p += 2;
-          l += 2;
-          memset(b, ' ', l);
+          p++;
+          memset(b, ' ', p - b + 1);
         }
         if (p[0] == '/' && p[1] == '/') {  // @rlyeh, was: p[0] == '/' && p[0] == '/'
           b = p;
-          l = 2;
           p += 2;
 
           while (p[0] != '\n') {
             ++p;
-            ++l;
           }
-          ++p;
-          ++l;
-          memset(b, ' ', l);
+          memset(b, ' ', p - b + 1);
         }
       }
 
