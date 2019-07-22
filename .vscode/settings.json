@@ -1,0 +1,6 @@
+{
+  "files.associations": {
+    "*.hh": "cpp",
+    "json5.h": "c"
+  }
+}

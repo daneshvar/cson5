@@ -1,0 +1,27 @@
+{
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "build example",
+      "command": "/usr/bin/gcc",
+      "args": [
+        "-g",
+        "-std=c11",
+        "${workspaceFolder}/json5.c",
+        "${workspaceFolder}/example/main.c",
+        "-I${workspaceFolder}",
+        "-lgomp",
+        "-o",
+        "${workspaceFolder}/example/json5"
+      ],
+      "options": {
+        "cwd": "/usr/bin"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ],
+  "version": "2.0.0"
+}
