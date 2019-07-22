@@ -12,6 +12,7 @@ _test
 [568vq].out
 
 example/json5
+backup/
 
 *.exe
 *.test
